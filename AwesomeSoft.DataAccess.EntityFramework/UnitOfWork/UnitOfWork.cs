@@ -1,11 +1,6 @@
 ﻿using AwesomeSoft.DataAccess.EntityFramework.Data;
 using AwesomeSoft.DataAccess.EntityFramework.Repositories;
 using AwesomeSoft.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.UnitOfWork
 {
@@ -17,9 +12,11 @@ namespace AwesomeSoft.DataAccess.EntityFramework.UnitOfWork
         {
             _context = context;
             People = new PeopleRepository(_context);
+            MeetingRooms = new MeetingRoomRepository(_context);
         }
 
         public IPeopleRepository People { get; private set; }
+        public IMeetingRoomRepository MeetingRooms { get; private set; }
 
         public int Complete()
         {

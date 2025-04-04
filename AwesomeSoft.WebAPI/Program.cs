@@ -23,6 +23,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IPeopleRepository, PeopleRepository>();
+builder.Services.AddTransient<IMeetingRoomRepository, MeetingRoomRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

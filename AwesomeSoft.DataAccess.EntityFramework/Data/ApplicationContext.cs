@@ -11,5 +11,7 @@ namespace AwesomeSoft.DataAccess.EntityFramework.Data
         }
 
         public DbSet<Person> People { get; set; }
+
+        public DbSet<MeetingRoom> MeetingRooms { get; set; }
     }
 }
