@@ -11,9 +11,9 @@ namespace AwesomeSoft.DataAccess.EntityFramework.UnitOfWork
         public EFUnitOfWork(ApplicationContext context)
         {
             _context = context;
-            People = new PeopleRepository(_context);
-            MeetingRooms = new MeetingRoomRepository(_context);
-            Bookings = new BookingRepository(_context);
+            People = new EFPeopleRepository(_context);
+            MeetingRooms = new EFMeetingRoomRepository(_context);
+            Bookings = new EFBookingRepository(_context);
         }
 
         public IPeopleRepository People { get; private set; }

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.Repositories;
 
-public class PeopleRepository : GenericRepository<Person>, IPeopleRepository
+public class EFPeopleRepository : EFGenericRepository<Person>, IPeopleRepository
 {
-    public PeopleRepository(ApplicationContext context) : base(context)
+    public EFPeopleRepository(ApplicationContext context) : base(context)
     {
     }
     

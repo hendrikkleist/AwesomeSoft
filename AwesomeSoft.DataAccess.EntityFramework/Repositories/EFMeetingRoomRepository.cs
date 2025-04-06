@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.Repositories;
 
-public class MeetingRoomRepository : GenericRepository<MeetingRoom>, IMeetingRoomRepository
+public class EFMeetingRoomRepository : EFGenericRepository<MeetingRoom>, IMeetingRoomRepository
 {
-    public MeetingRoomRepository(ApplicationContext context) : base(context)
+    public EFMeetingRoomRepository(ApplicationContext context) : base(context)
     {
     }
 

@@ -1,6 +1,8 @@
 using AwesomeSoft.DataAccess.EntityFramework.Data;
 using AwesomeSoft.DataAccess.EntityFramework.Repositories;
 using AwesomeSoft.DataAccess.EntityFramework.UnitOfWork;
+using AwesomeSoft.DataAccess.InMemory.Repositories;
+using AwesomeSoft.DataAccess.InMemory.UnitOfWork;
 using AwesomeSoft.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
@@ -14,21 +16,25 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 #region In memory database
+builder.Services.AddSingleton(typeof(IGenericRepository<>), typeof(IMGenericRepository<>));
+builder.Services.AddSingleton<IPeopleRepository, IMPeopleRepository>();
+builder.Services.AddSingleton<IMeetingRoomRepository, IMMeetingRoomRepository>();
+builder.Services.AddSingleton<IUnitOfWork, IMUnitOfWork>();
 
 #endregion
 
 #region Entity Framework
 // Add Database
-builder.Services.AddDbContext<ApplicationContext>(options =>
-options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection"),
-    b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+//builder.Services.AddDbContext<ApplicationContext>(options =>
+//options.UseSqlServer(
+//    builder.Configuration.GetConnectionString("DefaultConnection"),
+//    b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
 
-builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
+//builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
 
-builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddTransient<IPeopleRepository, PeopleRepository>();
-builder.Services.AddTransient<IMeetingRoomRepository, MeetingRoomRepository>();
+//builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(EFGenericRepository<>));
+//builder.Services.AddTransient<IPeopleRepository, EFPeopleRepository>();
+//builder.Services.AddTransient<IMeetingRoomRepository, EFMeetingRoomRepository>();
 #endregion
 var app = builder.Build();
 

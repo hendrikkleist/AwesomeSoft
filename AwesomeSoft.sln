@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.Domain", "Aweso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.DataAccess.EntityFramework", "AwesomeSoft.DataAccess.EntityFramework\AwesomeSoft.DataAccess.EntityFramework.csproj", "{71876E26-A36C-455C-AA68-125F9ACDAA96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.DataAccess.InMemory", "AwesomeSoft.DataAccess.InMemory\AwesomeSoft.DataAccess.InMemory.csproj", "{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{71876E26-A36C-455C-AA68-125F9ACDAA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71876E26-A36C-455C-AA68-125F9ACDAA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71876E26-A36C-455C-AA68-125F9ACDAA96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

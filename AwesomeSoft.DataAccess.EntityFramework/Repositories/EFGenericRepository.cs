@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class EFGenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly ApplicationContext _context;
 
-        public GenericRepository(ApplicationContext context)
+        public EFGenericRepository(ApplicationContext context)
         {
             _context = context;
         }

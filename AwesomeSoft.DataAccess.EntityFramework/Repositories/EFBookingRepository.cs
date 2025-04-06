@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.Repositories;
 
-public class BookingRepository : GenericRepository<Booking>, IBookingRepository
+public class EFBookingRepository : EFGenericRepository<Booking>, IBookingRepository
 {
-    public BookingRepository(ApplicationContext context) : base(context)
+    public EFBookingRepository(ApplicationContext context) : base(context)
     {
     }
 

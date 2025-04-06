@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AwesomeSoft.DataAccess.EntityFramework\AwesomeSoft.DataAccess.EntityFramework.csproj" />
+    <ProjectReference Include="..\AwesomeSoft.DataAccess.InMemory\AwesomeSoft.DataAccess.InMemory.csproj" />
     <ProjectReference Include="..\AwesomeSoft.Domain\AwesomeSoft.Domain.csproj" />
   </ItemGroup>
 
