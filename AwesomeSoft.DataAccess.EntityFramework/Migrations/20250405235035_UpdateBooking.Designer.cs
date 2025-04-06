@@ -4,6 +4,7 @@ using AwesomeSoft.DataAccess.EntityFramework.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AwesomeSoft.DataAccess.EntityFramework.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250405235035_UpdateBooking")]
+    partial class UpdateBooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace AwesomeSoft.DataAccess.EntityFramework.Migrations
 
                     b.HasIndex("BookerId");
 
-                    b.ToTable("Bookings", (string)null);
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("AwesomeSoft.Domain.Entities.MeetingRoom", b =>
@@ -72,7 +75,7 @@ namespace AwesomeSoft.DataAccess.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MeetingRooms", (string)null);
+                    b.ToTable("MeetingRooms");
                 });
 
             modelBuilder.Entity("AwesomeSoft.Domain.Entities.Person", b =>
@@ -98,7 +101,7 @@ namespace AwesomeSoft.DataAccess.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("People", (string)null);
+                    b.ToTable("People");
                 });
 
             modelBuilder.Entity("AwesomeSoft.Domain.Entities.Booking", b =>

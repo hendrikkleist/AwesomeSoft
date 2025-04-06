@@ -7,7 +7,7 @@ namespace AwesomeSoft.DataAccess.EntityFramework.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly ApplicationContext _context;
+        protected readonly ApplicationContext _context;
 
         public GenericRepository(ApplicationContext context)
         {

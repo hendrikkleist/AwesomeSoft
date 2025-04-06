@@ -13,10 +13,12 @@ namespace AwesomeSoft.DataAccess.EntityFramework.UnitOfWork
             _context = context;
             People = new PeopleRepository(_context);
             MeetingRooms = new MeetingRoomRepository(_context);
+            Bookings = new BookingRepository(_context);
         }
 
         public IPeopleRepository People { get; private set; }
         public IMeetingRoomRepository MeetingRooms { get; private set; }
+        public IBookingRepository Bookings { get; private set; }
 
         public int Complete()
         {
