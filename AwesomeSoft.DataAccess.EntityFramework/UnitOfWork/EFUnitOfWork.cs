@@ -4,11 +4,11 @@ using AwesomeSoft.Domain.Interfaces;
 
 namespace AwesomeSoft.DataAccess.EntityFramework.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public class EFUnitOfWork : IUnitOfWork
     {
         private readonly ApplicationContext _context;
 
-        public UnitOfWork(ApplicationContext context)
+        public EFUnitOfWork(ApplicationContext context)
         {
             _context = context;
             People = new PeopleRepository(_context);

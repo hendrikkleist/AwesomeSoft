@@ -32,6 +32,17 @@ public class PeopleController : ControllerBase
         return Ok(person);
     }
 
+    [HttpGet("getbookings/{id}")]
+    public ActionResult GetBooking(int id)
+    {
+        var bookings = _unitOfWork.People.GetBookings(id);
+        if (bookings == null)
+        {
+            return Ok("No bookings");
+        }
+        return Ok(bookings);
+    }
+
     [HttpPut("{id}")]
     public IActionResult PutPerson(int id, Person person)
     {

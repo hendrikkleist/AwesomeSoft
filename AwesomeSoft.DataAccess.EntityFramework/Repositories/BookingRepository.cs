@@ -16,7 +16,7 @@ public class BookingRepository : GenericRepository<Booking>, IBookingRepository
         return await _context.Bookings.AnyAsync(b => b.Day == booking.Day && b.SlotIndex == booking.SlotIndex);
     }
 
-    public Dictionary<string, string[]> GetSchedule()
+    public Dictionary<string, string[]> GetSchedule(int meetingRoomId)
     {
         string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
         string[] slots = new string[8]; // 8 time slots
@@ -24,12 +24,9 @@ public class BookingRepository : GenericRepository<Booking>, IBookingRepository
 
         foreach (var day in days)
         {
-            //var test =  _context.Bookings
-            //    .Where(b => b.Day == day).ToList();
-            //var booked = test.ToDictionary(b => b.SlotIndex, b => b.Booker);
             var booked = _context.Bookings
                 .Include(b => b.Booker)
-                .Where(b => b.Day == day)
+                .Where(b => b.Day == day && b.MeetingRoomId == meetingRoomId)
                 .ToDictionary(b => b.SlotIndex, b => b.Booker);
 
             var daySlots = new string[8];

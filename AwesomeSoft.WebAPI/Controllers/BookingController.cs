@@ -14,10 +14,10 @@ public class BookingController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    [HttpGet]
-    public ActionResult<Dictionary<string, string[]>> GetSchedule()
+    [HttpGet("schedule/{meetingRoomId}")]
+    public ActionResult<Dictionary<string, string[]>> GetSchedule(int meetingRoomId)
     {
-        return Ok(_unitOfWork.Bookings.GetSchedule());
+        return Ok(_unitOfWork.Bookings.GetSchedule(meetingRoomId));
     }
 
     [HttpPost("book")]
@@ -26,6 +26,11 @@ public class BookingController : ControllerBase
         if (booking.SlotIndex < 0 || booking.SlotIndex > 7)
         {
             return BadRequest("Invalid slot index");
+        }
+
+        if (!await _unitOfWork.MeetingRooms.RoomExistsAsync(booking.MeetingRoomId))
+        {
+            return NotFound("Room not found.");
         }
 
         if (await _unitOfWork.Bookings.BookingExistsAsync(booking))

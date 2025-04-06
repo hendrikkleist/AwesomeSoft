@@ -13,17 +13,23 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+#region In memory database
+
+#endregion
+
+#region Entity Framework
 // Add Database
 builder.Services.AddDbContext<ApplicationContext>(options =>
 options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection"),
     b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
 
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
 
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IPeopleRepository, PeopleRepository>();
 builder.Services.AddTransient<IMeetingRoomRepository, MeetingRoomRepository>();
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
