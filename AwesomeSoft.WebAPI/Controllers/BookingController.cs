@@ -23,6 +23,10 @@ public class BookingController : ControllerBase
     [HttpPost("book")]
     public async Task<ActionResult> BookSlot([FromBody] Booking booking)
     {
+        if (_unitOfWork.People.GetById(booking.BookerId) == null)
+        {
+            return NotFound("Booker is not found");
+        }
         if (booking.SlotIndex < 0 || booking.SlotIndex > 7)
         {
             return BadRequest("Invalid slot index");
@@ -39,6 +43,10 @@ public class BookingController : ControllerBase
         }
 
         _unitOfWork.Bookings.Add(booking);
+        // Add booking to person
+        var person = _unitOfWork.People.GetById(booking.BookerId);
+        person.Bookings.Add(booking);
+        _unitOfWork.People.Update(booking.BookerId, person);
         var result = _unitOfWork.Complete();
         if (result == 0)
         {
