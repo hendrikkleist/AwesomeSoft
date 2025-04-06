@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.DataAccess.Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.DataAccess.InMemory", "AwesomeSoft.DataAccess.InMemory\AwesomeSoft.DataAccess.InMemory.csproj", "{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.FrontEnd.Core", "AwesomeSoft.FrontEnd.Core\AwesomeSoft.FrontEnd.Core.csproj", "{6A1AA5EA-601C-4B90-9506-36161C23EF54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSoft.Frontend.TUI", "AwesomeSoft.Frontend.TUI\AwesomeSoft.Frontend.TUI.csproj", "{EF55D160-B4BD-42E6-AAD0-8282085D4E01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04AF87E-714B-468A-A3A6-0CFA468CDBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1AA5EA-601C-4B90-9506-36161C23EF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1AA5EA-601C-4B90-9506-36161C23EF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1AA5EA-601C-4B90-9506-36161C23EF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1AA5EA-601C-4B90-9506-36161C23EF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF55D160-B4BD-42E6-AAD0-8282085D4E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF55D160-B4BD-42E6-AAD0-8282085D4E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF55D160-B4BD-42E6-AAD0-8282085D4E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF55D160-B4BD-42E6-AAD0-8282085D4E01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

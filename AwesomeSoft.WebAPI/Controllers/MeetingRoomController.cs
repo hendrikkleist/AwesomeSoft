@@ -16,7 +16,7 @@ public class MeetingRoomController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult GetMeetingRooms()
+    public ActionResult<List<MeetingRoom>> GetMeetingRooms()
     {
         return Ok(_unitOfWork.MeetingRooms.GetAll());
     }
