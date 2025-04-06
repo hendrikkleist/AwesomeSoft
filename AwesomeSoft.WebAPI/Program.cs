@@ -20,7 +20,6 @@ builder.Services.AddSingleton(typeof(IGenericRepository<>), typeof(IMGenericRepo
 builder.Services.AddSingleton<IPeopleRepository, IMPeopleRepository>();
 builder.Services.AddSingleton<IMeetingRoomRepository, IMMeetingRoomRepository>();
 builder.Services.AddSingleton<IUnitOfWork, IMUnitOfWork>();
-
 #endregion
 
 #region Entity Framework
